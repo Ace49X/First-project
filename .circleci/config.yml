@@ -11,12 +11,11 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
-      - run: 
-          command: sudo pip install pipenv
-          pipenv install
-          name: Install pipenv
+      - run:
+          command: ./manage.py test
+          name: Test
 
 workflows:
   main:
     jobs:
-      - build-and-test spacial awareness
+      - build-and-test
